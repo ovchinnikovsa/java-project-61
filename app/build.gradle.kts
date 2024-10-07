@@ -19,8 +19,13 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.getByName("run", JavaExec::class) {
+    standardInput = System.`in`
+}
+
 tasks.withType<Jar> {
     manifest {
         attributes["Main-Class"] = "hexlet.code.Main"
     }
+    destinationDirectory.set(file("./build/install/app/bin"))
 }
