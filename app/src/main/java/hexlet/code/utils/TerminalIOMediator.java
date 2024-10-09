@@ -21,7 +21,7 @@ public class TerminalIOMediator {
                 result = SCANNER.nextInt();
                 break;
             } catch (InputMismatchException e) {
-                print("Введите корректное число");
+                print("Enter correct integer");
                 SCANNER.nextLine();
             }
         }

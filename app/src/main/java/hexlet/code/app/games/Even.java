@@ -1,29 +1,18 @@
 package hexlet.code.app.games;
 
-import hexlet.code.app.Cli;
 import hexlet.code.utils.TerminalIOMediator;
 
-public class Even {
-    private int answerCount = 0;
-    private final int answerToWin = 3;
-    private final String name;
-    private boolean endGame = false;
-
-    public Even() {
-        this.name = Cli.greeting();
-        rules();
-    }
-
+public class Even extends Game {
     public void run() {
         while (!endGame) {
-            int questionNumber = getQuestion();
-            checkAnswer(questionNumber);
+            int answer = getQuestion();
+            checkAnswer(answer);
             checkEndGameByAnswerCount();
         }
         getResult();
     }
 
-    private void rules() {
+    protected void rules() {
         TerminalIOMediator.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 
@@ -53,14 +42,6 @@ public class Even {
         if (answerCount >= answerToWin) {
             endGame = true;
         }
-    }
-
-    private void getResult() {
-        if (answerCount >= answerToWin) {
-            TerminalIOMediator.println("Congratulations, " + name + "!");
-            return;
-        }
-        TerminalIOMediator.println("Let's try again, " + name + "!");
     }
 
     private int getRandomNumber() {
