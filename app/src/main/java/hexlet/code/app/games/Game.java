@@ -4,7 +4,8 @@ import hexlet.code.app.Cli;
 import hexlet.code.app.exeptions.GameExeption;
 import hexlet.code.utils.TerminalIOMediator;
 
-// TODO: create more realisations of methods that a common for all games
+import java.util.Objects;
+
 abstract class Game {
     protected int answerCount = 0;
     protected final int answerToWin = 3;
@@ -16,9 +17,41 @@ abstract class Game {
         rules();
     }
 
-    abstract void run() throws GameExeption;
+    protected void getQuestion() {
+        TerminalIOMediator.print("Question: ");
+        TerminalIOMediator.println(genQuestion());
+    }
 
-    abstract void rules();
+    public void run() throws GameExeption {
+        while (!endGame) {
+            getQuestion();
+            handleAnswer();
+            checkEndGameByAnswerCount();
+        }
+        getResult();
+    }
+
+    protected abstract void rules();
+
+    protected abstract String genQuestion();
+
+    protected abstract <T> T getAnswer();
+
+    protected abstract <T> T getCorrectAnswer();
+
+    protected <T> void handleAnswer() {
+        T answer = getAnswer();
+        T correctAnswer = getCorrectAnswer();
+        if (Objects.equals(answer, correctAnswer)) {
+            answerCount++;
+            TerminalIOMediator.println("Correct!");
+            return;
+        }
+        endGame = true;
+        String errorMessage = "'" + answer.toString() + "' is wrong answer ;(. "
+                + "Correct answer was '" + correctAnswer.toString() + "'.";
+        TerminalIOMediator.println(errorMessage);
+    }
 
     protected void getResult() {
         if (answerCount >= answerToWin) {
@@ -26,5 +59,11 @@ abstract class Game {
             return;
         }
         TerminalIOMediator.println("Let's try again, " + name + "!");
+    }
+
+    protected void checkEndGameByAnswerCount() {
+        if (answerCount >= answerToWin) {
+            endGame = true;
+        }
     }
 }
