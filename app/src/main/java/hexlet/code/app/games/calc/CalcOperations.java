@@ -16,7 +16,7 @@ public enum CalcOperations {
         this.operation = operation;
     }
 
-    public char getSymbol() {
+    public Character getSymbol() {
         return symbol;
     }
 
@@ -26,6 +26,6 @@ public enum CalcOperations {
 
     public static CalcOperations getRandomOperation() {
         CalcOperations[] values = CalcOperations.values();
-        return values[(int) (Math.random() * values.length)];
+        return values[(int) (Math.random() * (values.length - 1) + 1)];
     }
 }

@@ -1,44 +1,42 @@
 package hexlet.code;
 
 import hexlet.code.app.Cli;
-import hexlet.code.app.games.Calculator;
-import hexlet.code.app.games.Even;
 import hexlet.code.app.exeptions.GameExeption;
+import hexlet.code.app.games.Game;
+import hexlet.code.app.games.calc.CalcOperations;
+import hexlet.code.utils.GameSelect;
 import hexlet.code.utils.TerminalIOMediator;
 
 public class Main {
     public static void main(String[] args) {
-        String entrance = "Please enter the game number and press Enter.\n"
-                + "1 - Greet\n"
-                + "2 - Even\n"
-                + "3 - Calculator\n"
-                + "0 - Exit\n"
-                + "Your choice: ";
-        TerminalIOMediator.print(entrance);
+        for (int j = 0; j < 100; j++) {
+            TerminalIOMediator.print(CalcOperations.getRandomOperation().getSymbol());
+        }
+        TerminalIOMediator.println("Please enter the game number and press Enter.");
+        for (GameSelect option : GameSelect.values()) {
+            if (option.getId() == null) {
+                continue;
+            }
+            TerminalIOMediator.println(option.getId() + " - " + option.getTitle());
+        }
+        TerminalIOMediator.print("Your choice: ");
         int choice = TerminalIOMediator.readInt();
 
-        // TODO: create game factory of games
-        //  and options by enum
-        try {
-            switch (choice) {
-                case 1:
-                    Cli.greeting();
-                    break;
-                case 2:
-                    Even evenGame = new Even();
-                    evenGame.run();
-                    break;
-                case 3:
-                    Calculator calcGame = new Calculator();
-                    calcGame.run();
-                    break;
-                default:
-                    System.exit(0);
+        GameSelect selected = GameSelect.getFromId(choice);
+        Game game = selected.getGame();
+        if (game == null) {
+            if (selected.getId() == 1) {
+                Cli.greeting();
             }
-        } catch (GameExeption e) {
-            TerminalIOMediator.print(e.getMessage());
-        } catch (Exception e) {
-            TerminalIOMediator.println("Critical error occurred. " + e.getMessage());
+            System.exit(0);
+        } else {
+            try {
+                game.run();
+            } catch (GameExeption e) {
+                TerminalIOMediator.print(e.getMessage());
+            } catch (Exception e) {
+                TerminalIOMediator.println("Critical error occurred. " + e.getMessage());
+            }
         }
 
     }

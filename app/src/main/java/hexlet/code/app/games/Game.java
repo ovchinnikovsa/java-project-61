@@ -6,13 +6,13 @@ import hexlet.code.utils.TerminalIOMediator;
 
 import java.util.Objects;
 
-abstract class Game {
+public abstract class Game {
     protected int answerCount = 0;
     protected final int answerToWin = 3;
     protected String name;
     protected boolean endGame = false;
 
-    Game() {
+    private void getInstructions() {
         this.name = Cli.greeting();
         rules();
     }
@@ -23,6 +23,7 @@ abstract class Game {
     }
 
     public void run() throws GameExeption {
+        getInstructions();
         while (!endGame) {
             getQuestion();
             handleAnswer();
