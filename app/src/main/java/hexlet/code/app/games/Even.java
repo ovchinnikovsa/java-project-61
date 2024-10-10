@@ -21,8 +21,4 @@ public class Even extends Game {
     protected String getCorrectAnswer() {
         return questionNumber % 2 == 0 ? "yes" : "no";
     }
-
-    private int getRandomNumber() {
-        return (int) (Math.random() * 100);
-    }
 }

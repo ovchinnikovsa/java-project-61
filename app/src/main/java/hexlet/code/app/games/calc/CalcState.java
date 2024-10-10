@@ -1,23 +1,15 @@
 package hexlet.code.app.games.calc;
 
-public class CalcState {
-    private final int x;
-    private final int y;
+import hexlet.code.app.games.common.IntPair;
+
+public class CalcState extends IntPair {
     private final CalcOperations operation;
 
     public CalcState(int x, int y, CalcOperations operation) {
-        this.x = x;
-        this.y = y;
+        super(x, y);
         this.operation = operation;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
 
     public CalcOperations getOperation() {
         return operation;

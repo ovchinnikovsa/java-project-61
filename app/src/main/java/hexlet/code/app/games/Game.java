@@ -67,4 +67,8 @@ public abstract class Game {
             endGame = true;
         }
     }
+
+    protected int getRandomNumber() {
+        return (int) (Math.random() * 100);
+    }
 }

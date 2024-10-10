@@ -30,8 +30,4 @@ public class Calculator extends Game {
         BinaryOperator<Integer> fn = state.getOperation().getOperation();
         return fn.apply(state.getX(), state.getY());
     }
-
-    private int getRandomNumber() {
-        return (int) (Math.random() * 100);
-    }
 }
