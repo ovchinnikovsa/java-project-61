@@ -2,6 +2,7 @@ package hexlet.code.app.games;
 
 import hexlet.code.app.games.calc.CalcOperations;
 import hexlet.code.app.games.calc.CalcState;
+import hexlet.code.app.games.common.Game;
 import hexlet.code.utils.TerminalIOMediator;
 
 import java.util.function.BinaryOperator;

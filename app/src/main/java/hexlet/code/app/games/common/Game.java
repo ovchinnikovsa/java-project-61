@@ -1,4 +1,4 @@
-package hexlet.code.app.games;
+package hexlet.code.app.games.common;
 
 import hexlet.code.app.Cli;
 import hexlet.code.app.exeptions.GameExeption;

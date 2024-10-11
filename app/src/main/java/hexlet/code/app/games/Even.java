@@ -1,5 +1,6 @@
 package hexlet.code.app.games;
 
+import hexlet.code.app.games.common.Game;
 import hexlet.code.utils.TerminalIOMediator;
 
 public class Even extends Game {

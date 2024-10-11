@@ -3,7 +3,7 @@ package hexlet.code.utils;
 import hexlet.code.app.games.Calculator;
 import hexlet.code.app.games.Even;
 import hexlet.code.app.games.GCD;
-import hexlet.code.app.games.Game;
+import hexlet.code.app.games.common.Game;
 
 import java.util.Objects;
 

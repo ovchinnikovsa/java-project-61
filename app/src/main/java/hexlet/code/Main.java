@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.app.Cli;
 import hexlet.code.app.exeptions.GameExeption;
-import hexlet.code.app.games.Game;
+import hexlet.code.app.games.common.Game;
 import hexlet.code.utils.GameSelect;
 import hexlet.code.utils.TerminalIOMediator;
 
