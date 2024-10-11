@@ -1,6 +1,7 @@
 package hexlet.code.app.games;
 
 import hexlet.code.app.games.common.Game;
+import hexlet.code.utils.RandomInt;
 import hexlet.code.utils.TerminalIOMediator;
 
 public class Even extends Game {
@@ -11,7 +12,7 @@ public class Even extends Game {
     }
 
     protected String genQuestion() {
-        questionNumber = getRandomNumber();
+        questionNumber = RandomInt.get();
         return String.valueOf(questionNumber);
     }
 

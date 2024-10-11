@@ -2,6 +2,7 @@ package hexlet.code.app.games;
 
 import hexlet.code.app.games.common.Game;
 import hexlet.code.app.games.common.IntPair;
+import hexlet.code.utils.RandomInt;
 import hexlet.code.utils.TerminalIOMediator;
 
 public class GCD extends Game {
@@ -12,8 +13,8 @@ public class GCD extends Game {
     }
 
     protected String genQuestion() {
-        int x = getRandomNumber();
-        int y = getRandomNumber();
+        int x = RandomInt.get();
+        int y = RandomInt.get();
         state = new IntPair(x, y);
         return x + " " + y;
     }
