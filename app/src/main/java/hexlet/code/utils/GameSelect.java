@@ -3,6 +3,7 @@ package hexlet.code.utils;
 import hexlet.code.app.games.Calculator;
 import hexlet.code.app.games.Even;
 import hexlet.code.app.games.GCD;
+import hexlet.code.app.games.Progression;
 import hexlet.code.app.games.common.Game;
 
 import java.util.Objects;
@@ -14,6 +15,7 @@ public enum GameSelect {
     EVEN(2, "Even", new Even()),
     CALC(3, "Calculator", new Calculator()),
     GCD(4, "GCD", new GCD()),
+    PROGRESS(5, "Progression", new Progression()),
 
     EXIT(0, "Exit", null);
 
