@@ -5,4 +5,8 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0c20cde8209d436f7599/test_coverage)](https://codeclimate.com/github/ovchinnikovsa/java-project-61/test_coverage)
 
-[![asciicast](https://asciinema.org/a/dt3ykrfqKckC2nQliOtPeeBxx.svg)](https://asciinema.org/a/dt3ykrfqKckC2nQliOtPeeBxx)
+[![asciicast](https://asciinema.org/a/679790.svg)](https://asciinema.org/a/679790)
+
+[![asciicast](https://asciinema.org/a/680473.svg)](https://asciinema.org/a/680473)
+
+[![asciicast](https://asciinema.org/a/680474.svg)](https://asciinema.org/a/680474)
